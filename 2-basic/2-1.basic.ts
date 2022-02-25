@@ -11,13 +11,16 @@
   // Object: function, array ...
 
   // number
-  const num: number = -6;
+  const num1: number = -6;
+  const num2: number = 10;
 
   // string
   const str: string = 'hello';
+  const namestr: string = 'Helena';
 
   // boolean
   const boal: boolean = false;
+  const truthy: boolean = true;
 
   // undefined
   let name: undefined; // 💩
@@ -29,7 +32,7 @@
   }
   
   // null
-  let person: null // 💩
+  let person1: null // 💩
   let person2: string | null;
 
   // unknown 💩
@@ -47,6 +50,11 @@
     return;
   }
 
+  function sayNothing(): void {
+    console.log('enter')
+    return;
+  }
+
   let unusable: void = undefined; // 💩
 
   // never 리턴할 계획이 없어!! 라고 명시하는 것, return도 작성하면 에러 발생
@@ -60,7 +68,9 @@
 
   // object
   let obj: Object; // 💩
-  function acceptSomeObject(obj: object) {}
+  function acceptSomeObject(obj: object) {
+    console.log(`Your infomation: ${obj}`)
+  }
   acceptSomeObject({ name: 'angela', age: 20})
   acceptSomeObject({ name: 'john', age: 30})
 }

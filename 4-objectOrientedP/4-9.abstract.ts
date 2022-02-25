@@ -5,7 +5,6 @@
 // abstract를 이용하면 꼭 자식 클래스에서 그 기능을 명시해줘야 함
 
 {
-
   type CoffeeCup = {
     shots: number;
     hasMilk?: boolean;
