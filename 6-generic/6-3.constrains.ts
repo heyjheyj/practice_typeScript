@@ -22,7 +22,7 @@ function payBad(employee: Employee): Employee {
   return employee;
 }
 
-// Employee만 확장한 타입만 받을 수 있음
+// Employee만 확장한 타입만 받을 수 있음, constrain
 function pay<T extends Employee>(employee: T): T {
   employee.pay();
   return employee;
@@ -34,3 +34,19 @@ const bob = new PartTimeEmployee();
 const johnAfterPay = pay(john);
 const bobAfterPay = pay(bob);
 // johnAfterPay.workFullTime() 안됨...
+
+const obj = {
+  name: "john",
+  age: 20
+};
+
+const obj2 = {
+  animal: "🐕"
+};
+
+// 완전 짱이당
+function getValue<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+console.log(getValue(obj, "age"));
