@@ -21,6 +21,7 @@ class App {
             this.userService.login()
         } catch(error) {
             // show dialog to user
+            // catch로 error를 받으면  error는 any타입이므로 지정
         }
 
         }
