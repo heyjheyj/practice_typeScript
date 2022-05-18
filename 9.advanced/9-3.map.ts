@@ -14,11 +14,18 @@ type ReadOnly<T> = {
     readonly [P in keyof T]: T[P]
 }
 
+
 type VideoOptional = Optional<Video>
 type VideoRD = ReadOnly<Video>
 
 const videoOp: VideoOptional = {
-    title: 'ironman'
+    title: 'ironman',
+    // year: 2003 // not assigned
+}
+
+const video2: VideoRD = {
+    title: 'inception',
+    author: 'nolan'
 }
 
 const video: VideoRD = {
