@@ -20,6 +20,7 @@ type VideoRD = ReadOnly<Video>
 
 const videoOp: VideoOptional = {
     title: 'ironman',
+    author: 'df'
     // year: 2003 // not assigned
 }
 
