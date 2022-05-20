@@ -14,6 +14,9 @@ type ReadOnly<T> = {
     readonly [P in keyof T]: T[P]
 }
 
+type Read<T> = {
+    readonly [P in keyof T]: T[P]
+}
 
 type VideoOptional = Optional<Video>
 type VideoRD = ReadOnly<Video>
