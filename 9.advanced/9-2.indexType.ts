@@ -19,6 +19,8 @@
     type keys = keyof Animal
 
     const key: keys = 'age' // console.log(key) === age
+    const keysecond: keys = 'name' // console.log(keysecond) === name
+    console.log(key, keysecond)
 
     type Person = {
         name: string;
