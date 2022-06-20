@@ -20,3 +20,11 @@
   // numbers.push(2) // 완전 에러가 남 😱
   numbers!.push(2); // 이건 분명 배열이야 나는 장담해! 할 때 느낌표 작성함
 }
+
+// 장담할 수 있을 때는 !를 쓰세요
+{
+  const button = document.querySelector('class')!
+  if(button) {
+    button.addEventListener('scroll', () => console.log('scroll'))
+  }
+}
