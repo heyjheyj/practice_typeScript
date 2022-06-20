@@ -1,3 +1,4 @@
+
 {
   // Array
   const fruits: string[] = ['🍏', '🍌', '🍉'];
@@ -17,5 +18,7 @@
   student[1] // 123
   const [name, age] = student;
 
+  // Tuple을 이용한 예제는 대표적으로 useState가 있음
 
 }
+
