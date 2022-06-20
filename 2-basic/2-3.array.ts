@@ -6,6 +6,7 @@
   // readonly는 Array<number>랑 같이 쓸 수 없어요.
   // readonly는 함수 안에서 파라미터를 변경할 수 없다는 것을 명시
   function printArray(fruits: readonly string[]) {
+    // fruits.push('🍊') readonly 때문에 변경이 안됨
   }
 
   // Tuple -> interface, type alias, class로 변경해서 사용하는 것이 좋음
@@ -16,5 +17,5 @@
   student[1] // 123
   const [name, age] = student;
 
-  
+
 }

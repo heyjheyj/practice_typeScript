@@ -5,7 +5,7 @@
 
   // old: var 💩
   // let es6
-  // const 
+  // const
 
   // primitive: number, string, boolean, bigint, symbol, null, undefined
   // Object: function, array ...
@@ -17,6 +17,7 @@
   // string
   const str: string = 'hello';
   const namestr: string = 'Helena';
+
 
   // boolean
   const boal: boolean = false;
@@ -30,7 +31,7 @@
   function find(): number | undefined {
     return undefined;
   }
-  
+
   // null
   let person1: null // 💩
   let person2: string | null;
