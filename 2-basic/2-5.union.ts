@@ -20,7 +20,7 @@
   }
   type LoginState = SuccessState | FailState
 
-  // function login(id:string, password: string): Promise<LoginState> {  
+  // function login(id:string, password: string): Promise<LoginState> {
   function loginFunction(): LoginState {
     return {
       response: {
@@ -39,5 +39,35 @@
     } else {
       console.log(`😢 ${state.reason}`)
     }
+  }
+}
+
+type Success = {
+  response : {
+    body: string
+  }
+}
+
+type Fail = {
+  reason: string
+}
+
+type Result = Success | Fail
+
+// function login -> success, fail
+function login (id:string, pw: string): Result {
+
+  return {
+    response: {
+      body: 'logged in!'
+    }
+  }
+}
+
+function loginState(state:Result): void {
+  if ('response' in state) {
+    console.log(`🎉 ${state.response.body}`)
+  } else {
+    console.log(`${state.reason}😭`)
   }
 }
