@@ -41,3 +41,20 @@ console.log(calculate('remainder', 5, 2)); // 1
 //     return num1 % num2;
 //   }
 // }
+
+function cal(ways:string, one:number, two:number) :number {
+  switch (ways) {
+    case('add'):
+      return one + two;
+    case('sub'):
+      return one - two;
+    case('multiply'):
+      return one * two;
+    case('divide'):
+      return one / two;
+    case('remainder'):
+      return one % two;
+    default:
+      throw new Error('not ways')
+  }
+}
