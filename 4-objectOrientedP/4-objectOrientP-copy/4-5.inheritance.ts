@@ -11,7 +11,6 @@
     makerCoffee(shots: number, milk: Milk): CoffeeCup;
   }
 
-
   class CoffeeMachine implements CoffeeMaker{
     private static BEANS_GRAM_PER_SHOT: number = 7;
     private coffeeBeans: number = 0;
@@ -78,9 +77,15 @@
   }
 
   class CaffeLatteMachine extends CoffeeMachine {
+    constructor(bean:number, public readonly serialNumber: number) {
+      super(bean); // 부모의 생성자를 부르는 메소드
+    }
     private steamMilk(): void {
       console.log('steam Milk....')
     }
+
+    // overwrapping이 가능
+
   makerCoffee(shots: number, milk:Milk): CoffeeCup {
       const coffee = super.makerCoffee(shots, milk)
     this.steamMilk()
@@ -92,7 +97,7 @@
   }
 
   const machine = CoffeeMachine.makeMachine(33)
-  const latteMachine = new CaffeLatteMachine(33)
+  const latteMachine = new CaffeLatteMachine(33, 5)
 
   const coffee = latteMachine.makerCoffee(3, 'no milk')
 }
