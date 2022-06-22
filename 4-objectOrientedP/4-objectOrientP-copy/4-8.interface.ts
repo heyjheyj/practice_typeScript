@@ -47,6 +47,7 @@
             this.coffeeBeans -= shots * CoffeeMachine.BEANS_GRAM_PER_SHOT;
         }
 
+
         private preheat(): void {
             console.log('Ready to extract shots...🔥')
         }
