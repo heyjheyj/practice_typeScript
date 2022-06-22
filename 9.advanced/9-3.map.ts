@@ -54,4 +54,18 @@ const video: VideoRD = {
     type Nullable<T> = {
         [P in keyof T]: T[P] | null
     }
+
+    const obj2: Nullable<Video> = {
+        title: 'her',
+        author: null
+    }
+    
+    type Proxy<T> = {
+        get(): T;
+        set(value:T): void
+    }
+    
+    type Proxify<T> = {
+        [P in keyof T]: Proxy<T[P]>
+    }
 }

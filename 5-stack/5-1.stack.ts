@@ -3,20 +3,20 @@
 // 단일 연결리스트 head -> 1 -> 2 -> 3
 // 이중 연결리스트는 head -> <- 1 -> <- 2 -> <- 3 양방
 
-interface Stack {
+interface Stack<T> {
   readonly size: number;
-  push(value: string): void;
-  pop(): string;
+  push(value: T): void;
+  pop(): T;
 }
 
-type StackNode = {
-  readonly value: string;
-  readonly next?: StackNode; // StackNode | undefined;
+type StackNode<T> = {
+  readonly value: T;
+  readonly next?: StackNode<T>; // StackNode | undefined;
 };
 
-class StackImpl implements Stack {
+class StackImpl<T> implements Stack<T> {
   private _size: number = 0; // 내부에서 쓰이는 변수 앞에 언더바
-  private head?: StackNode; // StackNode | undefined;
+  private head?: StackNode<T>; // StackNode | undefined;
 
   constructor(private capacity: number) {}
 
@@ -24,16 +24,16 @@ class StackImpl implements Stack {
     return this._size;
   }
 
-  push(value: string): void {
+  push(value: T): void {
     if (this.capacity === this.size) {
       throw new Error("Stack is full!!");
     }
-    const node: StackNode = { value, next: this.head };
+    const node = { value, next: this.head };
     this.head = node;
     this._size++;
   }
 
-  pop(): string {
+  pop(): T {
     // null == undefined, null !== undefined
     if (this.head == null) {
       throw new Error("Stack is empty");
@@ -45,7 +45,7 @@ class StackImpl implements Stack {
   }
 }
 
-const stack = new StackImpl(5);
+const stack = new StackImpl<string>(5);
 stack.push("steve 1");
 stack.push("biden 2");
 stack.push("bob 3");
